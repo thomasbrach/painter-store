@@ -35,9 +35,7 @@ const SignUp = () => {
 
   const handleChange = (event) => {
     const { value, name } = event.target;
-    setFormContent({
-      [name]: value,
-    });
+    setFormContent({ ...formContent, [name]: value });
   };
 
   return (

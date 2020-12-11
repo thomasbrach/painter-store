@@ -12,6 +12,7 @@ import { auth, createUserProfileDocument } from "./firebase/firebase.utils";
 
 const App = () => {
   const [currentUser, setCurrentUser] = useState(null);
+
   useEffect(() => {
     const unsubscribeFromAuth = auth.onAuthStateChanged(async (userAuth) => {
       if (userAuth) {
@@ -24,10 +25,10 @@ const App = () => {
         });
       }
       setCurrentUser(userAuth);
-      console.log(currentUser);
     });
     return () => unsubscribeFromAuth();
-  }, [currentUser]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <Fragment>
