@@ -21,9 +21,7 @@ const SignIn = () => {
 
   const handleChange = (event) => {
     const { value, name } = event.target;
-    setCredentials({
-      [name]: value,
-    });
+    setCredentials({ ...credentials, [name]: value });
   };
 
   return (
