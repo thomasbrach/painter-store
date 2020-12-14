@@ -11,6 +11,7 @@ const userReducer = (state = INITIAL_STATE, { type, payload }) => {
         ...state,
         currentUser: payload,
       };
+
     default:
       return state;
   }
