@@ -31,7 +31,7 @@ export const fetchCollectionsStartAsync = () => {
       .get()
       .then((snapshot) => {
         const collectionsMap = convertCollectionsSnapshotToMap(snapshot);
-        fetchCollectionsSuccess(collectionsMap);
+        dispatch(fetchCollectionsSuccess(collectionsMap));
       })
       .catch((error) => dispatch(fetchCollectionsFailure(error.message)));
   };
